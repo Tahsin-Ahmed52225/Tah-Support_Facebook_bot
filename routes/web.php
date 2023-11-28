@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return "App is running well";
 });
+
+Route::get('/webhook', ['BotController','verifyToken']);
+Route::post('/webhook', ['BotController','handleQuery']);
